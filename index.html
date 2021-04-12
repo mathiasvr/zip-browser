@@ -14,7 +14,11 @@
   <a href="file.zip/">file.zip/</a>
 
   <script>
-    navigator.serviceWorker.register('service-worker.min.js');
+    if (window.location.host === 'mathiasvr.github.io') {
+      navigator.serviceWorker.register('/zip-browser/service-worker.min.js', { scope: '/zip-browser/' })
+    } else {
+      navigator.serviceWorker.register('service-worker.min.js');
+    }
   </script>
 </body>
 
