@@ -1,0 +1,40 @@
+{
+  "name": "zip-browser",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Browse zip files in the browser using a service worker",
+  "license": "MIT",
+  "author": "Mathias Rasmussen <mathiasvr@gmail.com>",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint .",
+    "test": "npm run lint",
+    "prepare": "npm test && npm run build"
+  },
+  "dependencies": {
+    "@zip.js/zip.js": "^2.2.26"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "rollup": "^2.45.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "main": "rollup.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasvr/zip-browser.git"
+  },
+  "keywords": [
+    "zip",
+    "deflate",
+    "serviceworker",
+    "browser"
+  ],
+  "bugs": {
+    "url": "https://github.com/mathiasvr/zip-browser/issues"
+  },
+  "homepage": "https://github.com/mathiasvr/zip-browser#readme"
+}
