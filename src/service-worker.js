@@ -3,10 +3,8 @@ import { ZipReader, HttpReader, BlobWriter } from '@zip.js/zip.js/lib/zip-no-wor
 self.addEventListener('fetch', event => {
   const { request } = event
   // Skip cross-origin requests
-  if (request.url.startsWith(self.location.origin)) {
-    const url = new URL(request.url)
-
-    const path = url.pathname.slice(1)
+  if (request.url.startsWith(self.registration.scope)) {
+    const path = request.url.slice(self.registration.scope.length)
     const s = path.split('/')
 
     if (s.length > 1) {
